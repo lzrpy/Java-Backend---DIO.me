@@ -1,0 +1,59 @@
+PE html>
+<html lang="pt-br">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <title> Gerador de Hashing </title>
+
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <link rel="stylesheet" href="index.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+    <py-script>
+        import hashlib
+        def hash_sha512(*ags, **kags): 
+            input_text = Element('input_text_hashing') 
+            text_to_hash = input_text.element.value
+            hashing = hashlib.sha512()
+            hashing.update(text_to_hash.encode())
+            text_hashing = hashing.hexdigest()
+            area_result = Element('area_result')
+            area_result.element.innerText = text_hashing
+    
+
+
+        
+
+    </py-script>
+
+    <main>
+        <h1> Hashing Generator </h1>
+        <h2> SHA512 </h2>
+        <input id=input_text_hashing type="text" id="name" name="name" requwadired
+        minlength="2" maxlength="300" size="10">
+        <input id = button_submit type="button"  py-click ="hash_sha512()" value="Criar Hashing">
+        <textarea id=area_result rows="10" cols="111" style="resize: none"></textarea>
+
+
+
+    
+    </body>
+</html>
+
